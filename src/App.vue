@@ -12,6 +12,22 @@ export default {
         if(el){
           el.scrollIntoView({behaviour: 'smooth'});
         }
+      },
+
+      scrollToDissertation: function() {
+        const el = this.$refs.dissertationSection;
+
+        if(el){
+          el.scrollIntoView({behaviour: 'smooth'});
+        }
+      },
+
+      scrollToDashAndSlash: function() {
+        const el = this.$refs.DandSSection;
+
+        if(el){
+          el.scrollIntoView({behaviour: 'smooth'});
+        }
       }
     }
 }
@@ -30,10 +46,10 @@ export default {
           <br>
           I am an enthusiastic and artistic, young game developer, looking for an entry level position in the game development industry. 
           I have experience in all parts of game development, from coding to sound design but especially in C# and Unity. 
-          In 2022, during my gap year, I released a solo project, called “Dash and Slash”, on the Steam Store. 
+          In 2022, during my gap year, I released a <a href="#" v-on:click="scrollToDashAndSlash()" class="allowPointerEvents">solo project</a>, called “Dash and Slash”, on the Steam Store. 
           <br>
           <br>
-          During my final year of university, I focused my dissertation on emergent narratives and how gameplay influences storytelling. 
+          During my final year of university, I focused my <a href="#" v-on:click="scrollToDissertation()" class="allowPointerEvents">dissertation</a> on emergent narratives and how gameplay influences storytelling. 
           Accordingly, I created a prototype  of a simulation-driven RTS game, that borrowed heavily in style from games such as 
           Kenshi and Stellaris.
           <br>
@@ -45,12 +61,61 @@ export default {
       </div>
     </div>
 
+    <section class="navBar noPointerEvents">
+
+    </section>
 
     <section class="section noPointerEvents">
       <img class="backingImage noselect" src="./assets/firstBackground.png"/>
     </section>
 
-    <section ref="githubSection" class="section noPointerEvents displacement3">
+    <section ref="dissertationSection" class="section noPointerEvents displacement1">
+      <img class="backingImageWrittenSection noselect" src="./assets/dissertationBackground.png"/>
+
+      <div class="dissMainAnchor noPointerEvents">
+        <div class="dissDescription font noPointerEvents">
+          "Star And Salvation" was the product of my dissertation. The report itself focused on simulated systems and how 
+          they could be used to dynamically generate narratives, mainly driven by player decisions. 
+          <br>
+          <br>
+          My simulation took a lot of inspiration from data-centered design and specifically the game engine Bevy's component and entity system, even though my project was created with Unity.
+          <br>
+          <br>
+          During the project (mostly when I didn't want to work on the more complicated stuff), I improved many of my artistic skills. Most of the visual elements in the game utilize 
+          raymarching to give them a sense of depth.
+          <br>
+          <br>
+          You can read the report <a class="allowPointerEvents" href="./dissertation.html">here</a> and the code repository can be found <a class="allowPointerEvents" href="https://github.com/AlexanderNoles/FinalYearProject">here</a>.
+        </div>
+
+        <img class="dissImage noPointerEvents noselect" src="./assets/screenshot8.png"/>
+      </div>
+    </section>
+
+    <section class="section noPointerEvents displacement2">
+      gallery
+    </section>
+
+    <section ref="DandSSection" class="section displacement3 noPointerEvents">      
+      <div class="dAndSMainAnchor noPointerEvents">
+        <div class="dAndSDescription font noPointerEvents">
+          <a href="https://store.steampowered.com/app/1951910/Dash_And_Slash/" target="_blank" class="allowPointerEvents noselect">"Dash And Slash"</a> 
+          was a project I created during my gap year. It is a full video game (with all the art, code and music produced by me) that I released on the Steam store.
+          <br>
+          <br>
+          Development took several months, during part of which I was also working a regular job. The process taught me a huge amount, particularly in regards to 
+          things outside my regular purview of coding. It also solidified my decision to pursue game development as a career despite choosing to do a pure Computer Science degree.
+        </div>
+        <img class="dAndSImage noPointerEvents noselect" src="./assets/screenshot7.png"/>
+      </div>
+      <img class="backingImageWrittenSection noselect" src="./assets/secondBackground-export.png"/>
+    </section>
+
+    <section class="section noPointerEvents displacement4">
+      future projects
+    </section>
+
+    <section ref="githubSection" class="section noPointerEvents displacement5">
       <img class="backingImage noselect" src="./assets/thirdBackground.png"/>
 
       <div class="section topBar noselect">
@@ -75,7 +140,7 @@ export default {
           <br>
 
           <dt>• Typerope ( <a href="https://github.com/Piturnah/Typerope" target="_blank" class="allowPointerEvents">https://github.com/Piturnah/Typerope</a> )</dt>
-          <dd> Group submission for LD49 in 2021. A game based similar to twister but utlizing keys on the keyboard instead of coloured circles. Playable here: <a href="https://piturnah.itch.io/typerope">Itch.io</a> </dd>
+          <dd> Group submission for LD49 in 2021. A game similar to twister but utlizing keys on the keyboard instead of coloured circles. Playable here: <a href="https://piturnah.itch.io/typerope">Itch.io</a> </dd>
           <br>
 
           <dt>• Tri-Colour Gun ( <a href="https://github.com/AlexanderNoles/MiniJam111" target="_blank" class="allowPointerEvents">https://github.com/AlexanderNoles/MiniJam111</a> )</dt>
@@ -105,7 +170,7 @@ export default {
           <h1>Non-Game Jam Games:</h1>
           
           <dt>• InfiniPlane ( <a href="https://github.com/AlexanderNoles/InfiniPlane" target="_blank" class="allowPointerEvents">https://github.com/AlexanderNoles/InfiniPlane</a> )</dt>
-          <dd> A shell texturing based grass project, based primarily on <a href="https://www.youtube.com/watch?v=9dr-tRQzij4">this</a> video by Acerola. </dd>
+          <dd> A shell texturing based grass project, based primarily on <a href="https://www.youtube.com/watch?v=9dr-tRQzij4">this</a> video by YouTuber Acerola. </dd>
           <br>
 
           <h1>University Work:</h1>
@@ -146,21 +211,7 @@ export default {
         </dl>
       </div>
     </section>
-  
-    <section class="section displacement2 noPointerEvents">      
-      <div class="dAndSMainAnchor noPointerEvents">
-        <div class="dAndSDescription font noPointerEvents">
-          <a href="https://store.steampowered.com/app/1951910/Dash_And_Slash/" target="_blank" class="allowPointerEvents noselect">"Dash And Slash"</a> 
-          was a project I created during my gap year. It is a full video game (with all the art, code and music produced by me) that I released on the Steam store.
-          <br>
-          <br>
-          Development took several months, during part of which I was also working a regular job. The process taught me a huge amount, particularly in regards to 
-          things outside my regular purview of coding. It also solidified my decision to pursue game development as a career despite choosing to do a Computer Science degree.
-        </div>
-        <img class="dAndSImage noPointerEvents noselect" src="./assets/screenshot7.png"/>
-      </div>
-      <img class="backingImage noselect" src="./assets/secondBackground-export.png"/>
-    </section>
+
   </article>
   
   
@@ -268,6 +319,31 @@ export default {
     width: 50%;
   }
 
+
+  .dissMainAnchor{
+    top: 5%;
+    right: 20%;
+    position: absolute;
+
+    height: 100%;
+    width: 100%;
+  }
+
+  .dissImage{
+    left: 25%;
+    width: 50%;
+    position: absolute;
+  }
+
+  .dissDescription{
+    z-index: 10000;
+    top: 35%;
+    left: 25%;
+    position: absolute;
+    width: 35%;
+    color: white;
+  }
+
   .text{
     color: white;
   }
@@ -275,6 +351,10 @@ export default {
   .backingImage{
     width: 100%;
     filter: brightness(70%)
+  }
+
+  .backingImageWrittenSection{
+    width: 100%;
   }
 
   .section{
@@ -288,6 +368,17 @@ export default {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+  }
+
+  .navBar{
+    z-index: 10000;
+    width: 100%;
+    height: 50px;
+
+    bottom: 0%;
+
+    position: fixed;
+    background-color: white;
   }
 
   .topBar{
@@ -326,6 +417,16 @@ export default {
   .displacement3{
     top: 300%;
     z-index: -997;
+  }
+
+  .displacement4{
+    top: 400%;
+    z-index: -996;
+  }
+
+  .displacement5{
+    top: 500%;
+    z-index: -995;
   }
 
 </style>

@@ -1,11 +1,13 @@
 Landing section 
 Dash And Slash
-
----
-
-Dissertation
 Smaller Project Section
+Dissertation
 
 ---
 
-GitHub Section?
+Pixel Art Section (Maybe just a straight up gallery?)
+Future Work Section
+
+---
+
+
