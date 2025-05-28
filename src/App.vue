@@ -36,11 +36,13 @@ export default {
 <template>
 
   <article class="container">
+    <a href = "./tanuki.html" class="secretTanukiButton allowPointerEvents"></a>
+
     <div class="titleContainer noPointerEvents">
       <h1 class="title font noselect">ALEXANDER NOLES</h1>
 
       <div class="descriptionTextBlock">
-        <h3 class="text font noselect">
+        <div class="text font noselect">
           Hi! My name is Alex, I am a recently graduated CS Student who studied at Sussex University. 
           <br>
           <br>
@@ -57,12 +59,11 @@ export default {
           Many of my projects are stored on my <a href="https://github.com/AlexanderNoles" target="_blank" class="allowPointerEvents">Github</a>, including a lot of my university work.
           I list several of these are in a section <a href="#" v-on:click="scrollToGithub()" class="allowPointerEvents">below</a>.
           <br>
-        </h3>
+        </div>
       </div>
     </div>
 
     <section class="navBar noPointerEvents">
-
     </section>
 
     <section class="section noPointerEvents">
@@ -221,6 +222,13 @@ export default {
 
   a {
     color: rgb(112, 9, 9);
+  }
+
+  .secretTanukiButton{
+    width: 50px;
+    height: 50px;
+
+    position: absolute;
   }
 
   .container{
