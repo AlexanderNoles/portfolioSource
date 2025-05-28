@@ -1,15 +1,25 @@
 <script>
 
+export default {
+    name: 'app',
+    data() {
+      return { n: 0 }
+    },
+    methods: {
+      scrollToGithub: function() {
+        const el = this.$refs.githubSection;
+
+        if(el){
+          el.scrollIntoView({behaviour: 'smooth'});
+        }
+      }
+    }
+}
 </script>
 
 <template>
 
   <article class="container">
-
-    <div class="section topBar noselect">
-      <a href="https://github.com/AlexanderNoles" target="_blank"> <img src="./assets/githubLogo.png" alt="" id="logo" class="githubLogo"> </a>
-    </div>
-
     <div class="titleContainer noPointerEvents">
       <h1 class="title font noselect">ALEXANDER NOLES</h1>
 
@@ -27,6 +37,10 @@
           Accordingly, I created a prototype  of a simulation-driven RTS game, that borrowed heavily in style from games such as 
           Kenshi and Stellaris.
           <br>
+          <br>
+          Many of my projects are stored on my <a href="https://github.com/AlexanderNoles" target="_blank" class="allowPointerEvents">Github</a>, including a lot of my university work.
+          I list several of these are in a section <a href="#" v-on:click="scrollToGithub()" class="allowPointerEvents">below</a>.
+          <br>
         </h3>
       </div>
     </div>
@@ -36,8 +50,101 @@
       <img class="backingImage noselect" src="./assets/firstBackground.png"/>
     </section>
 
-    <section class="section noPointerEvents displacement1">
-      <img class="backingImage noselect" src="./assets/firstBackground.png"/>
+    <section ref="githubSection" class="section noPointerEvents displacement3">
+      <img class="backingImage noselect" src="./assets/thirdBackground.png"/>
+
+      <div class="section topBar noselect">
+        <a href="https://github.com/AlexanderNoles" target="_blank" class="allowPointerEvents"> <img src="./assets/githubLogo.png" alt="" id="logo" class="githubLogo"> </a>
+        <h1 class="title font">Github</h1> <a class="font allowPointerEvents" href="https://github.com/AlexanderNoles" target="_blank">(https://github.com/AlexanderNoles)</a>
+      </div>
+
+      <div class="text font githubMainAnchor allowPointerEvents">
+        <dl>
+        
+          <h1>Past Game Jams:</h1>
+          <i>(Only includes Submissions with public repositories)</i>
+          <br>
+          <br>
+
+          <dt>• Root King ( <a href="https://github.com/AlexanderNoles/ld54" target="_blank" class="allowPointerEvents">https://github.com/AlexanderNoles/ld54</a> )</dt>
+          <dd> Submission for LD54. Only game jam submission I have made that utlizies Godot instead of Unity. A turn-based puzzle game focused on inputing the correct sequence of inputs. Playable here: <a href="https://emeraldrailgun.itch.io/root-king">Itch.io</a> </dd>
+          <br>
+
+          <dt>• Skelli-boi ( <a href="https://github.com/Piturnah/skeliboi" target="_blank" class="allowPointerEvents">https://github.com/Piturnah/skeliboi</a> )</dt>
+          <dd> Jam version of a later short-lived released game. I only did art on this project as I was unfamiliar with Unity at the time (early 2020). </dd>
+          <br>
+
+          <dt>• Typerope ( <a href="https://github.com/Piturnah/Typerope" target="_blank" class="allowPointerEvents">https://github.com/Piturnah/Typerope</a> )</dt>
+          <dd> Group submission for LD49 in 2021. A game based similar to twister but utlizing keys on the keyboard instead of coloured circles. Playable here: <a href="https://piturnah.itch.io/typerope">Itch.io</a> </dd>
+          <br>
+
+          <dt>• Tri-Colour Gun ( <a href="https://github.com/AlexanderNoles/MiniJam111" target="_blank" class="allowPointerEvents">https://github.com/AlexanderNoles/MiniJam111</a> )</dt>
+          <dd> My submission for the 111th mini jam in 2022. Game focused around using several guns with varying weaknesses and strengths. Playable here: <a href="https://emeraldrailgun.itch.io/tri-colour-gun">Itch.io</a> </dd>
+          <br>
+
+          <dt>• dread-83 ( <a href="https://github.com/Piturnah/dread-83?tab=readme-ov-file" target="_blank" class="allowPointerEvents">https://github.com/Piturnah/dread-83?tab=readme-ov-file</a> )</dt>
+          <dd> Group submission for the 83rd mini jam in 2021. </dd>
+          <br>
+
+          <dt>• Minute Long Disaster ( <a href="https://github.com/AlexanderNoles/OneMinuteJam" target="_blank" class="allowPointerEvents">https://github.com/AlexanderNoles/OneMinuteJam</a> )</dt>
+          <dd> My submission for the One Minute Jam. Can be downloaded here: <a href="https://emeraldrailgun.itch.io/minutelongdisaster">Itch.io</a> </dd>
+          <br>
+
+          <dt>• Dash And Slash (Jam Version) ( <a href="https://github.com/AlexanderNoles/OneButtonJam" target="_blank" class="allowPointerEvents">https://github.com/AlexanderNoles/OneButtonJam</a> )</dt>
+          <dd> The original iteration of my gap year project. Build can be downloaded from here: <a href=https://emeraldrailgun.itch.io/bluevsred>Itch.io</a> </dd>
+          <br>
+
+          <dt>• Cube-Loop ( <a href="https://github.com/AlexanderNoles/LD47" target="_blank" class="allowPointerEvents">https://github.com/AlexanderNoles/LD47</a> )</dt>
+          <dd> My submission for LD47 in 2020. A short game based around using death to progress. Playable here: <a href="./src/cube-loop/index.html">Cube-Loop</a></dd>
+          <br>
+
+          <dt>• Sussex Game Jam ( <a href="https://github.com/AlexanderNoles/SussexGameJam" target="_blank" class="allowPointerEvents">https://github.com/AlexanderNoles/SussexGameJam</a> )</dt>
+          <dd> Unfinished submission for the Sussex Game Jam. One of the more enjoyable development experiences I've had despite being unable to finish in time.</dd>
+          <br>
+
+          <h1>Non-Game Jam Games:</h1>
+          
+          <dt>• InfiniPlane ( <a href="https://github.com/AlexanderNoles/InfiniPlane" target="_blank" class="allowPointerEvents">https://github.com/AlexanderNoles/InfiniPlane</a> )</dt>
+          <dd> A shell texturing based grass project, based primarily on <a href="https://www.youtube.com/watch?v=9dr-tRQzij4">this</a> video by Acerola. </dd>
+          <br>
+
+          <h1>University Work:</h1>
+
+          <dt>• World Conqueset ( <a href="https://github.com/AlexanderNoles/SE-Risk" target="_blank" class="allowPointerEvents">https://github.com/AlexanderNoles/SE-Risk</a> )</dt>
+          <dd> A recreation of the video game RISK for my Software Engineering module. While this was intended to be a group project it was largely coded by me and one other person. </dd>
+          <br>
+
+          <dt>• Shader Basics ( <a href="https://github.com/AlexanderNoles/3DWA" target="_blank" class="allowPointerEvents">https://github.com/AlexanderNoles/3DWA</a> )</dt>
+          <dd> Coursework for my 3DWA module. Demonstrates some simplistic fundamental shader techniques but more importantly some model work and use of three.js. 
+          Avaliable <a href="https://users.sussex.ac.uk/~an505/">here</a>. </dd>
+          <br>
+
+          <dt>• Game Explain ( <a href="https://github.com/AlexanderNoles/LE-Project" target="_blank" class="allowPointerEvents">https://github.com/AlexanderNoles/LE-Project</a> )</dt>
+          <dd> A small video games project meant to demonstrate an application of constructivist learning techniques. Coursework for my Technology-Enhanced Learning Environments module. </dd>
+          <br>
+
+          <dt>• Computer Networks Coursework ( <a href="https://github.com/AlexanderNoles/CN-Coursework" target="_blank" class="allowPointerEvents">https://github.com/AlexanderNoles/CN-Coursework</a> )</dt>
+          <dd> Implementation of TFTP-TCP and TFTP-UDP (both client and server) for my Computer Networks module. </dd>
+          <br>
+
+          <dt>• Operating Systems Coursework ( <a href="https://github.com/AlexanderNoles/OS-Coursework" target="_blank" class="allowPointerEvents">https://github.com/AlexanderNoles/OS-Coursework</a> )</dt>
+          <dd> Implementation of several task schedulers (and written experiments measuring their performance) for my Operating Systems module. </dd>
+          <br>
+
+          <dt>• Past Portfolio ( <a href="https://github.com/AlexanderNoles/ITMPortfolio" target="_blank" class="allowPointerEvents">https://github.com/AlexanderNoles/ITMPortfolio</a> )</dt>
+          <dd> A previous iteration of this website, coursework for my ITM module. </dd>
+          <br>
+
+          <h1>Other:</h1>
+          <dt>• This Website ( <a href="https://github.com/AlexanderNoles/portfolioSource" target="_blank" class="allowPointerEvents">https://github.com/AlexanderNoles/portfolioSource</a> )</dt>
+          <dd> My portfolio was made using Vue.js, though I only utilize its structures sparingly. For a smaller website like this I much prefer working mostly without a framework, something Vue allows me to dictate easily.</dd>
+          <br>
+        
+          <dt>• My NEA ( <a href="https://github.com/AlexanderNoles/NEA" target="_blank" class="allowPointerEvents">https://github.com/AlexanderNoles/NEA</a> )</dt>
+          <dd> My A-Level NEA. Like many of my projects, this one focused on generation, specifically maze generation. There was some additional code centered around drawing the maze, all done in python.</dd>
+          <br>
+        </dl>
+      </div>
     </section>
   
     <section class="section displacement2 noPointerEvents">      
@@ -60,6 +167,10 @@
 </template>
 
 <style scoped>
+
+  a {
+    color: rgb(112, 9, 9);
+  }
 
   .container{
     position: absolute;
@@ -113,6 +224,25 @@
     background-color: black;
   }
 
+  .githubMainAnchor{
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    width: 90%;
+    height: 75%;
+
+    overflow-y: scroll;
+  }
+
+  .githubMainAnchor dt{
+    padding-bottom: 5px;
+    padding-top: 5px;
+  }
+
+  .githubMainAnchor dd{
+    color: rgb(192, 192, 192);
+  }
+
   .dAndSMainAnchor{
     top: 5%;
     left: 30%;
@@ -135,8 +265,6 @@
     top: 50%;
     left: 12%;
     position: absolute;
-
-    
     width: 50%;
   }
 
@@ -170,7 +298,7 @@
   }
 
   .topBar a{
-    float: right;
+    float: left;
     text-align: center;
     margin: 10px;
     padding: 2px;
@@ -193,6 +321,11 @@
   .displacement2{
     top: 200%;
     z-index: -998;
+  }
+
+  .displacement3{
+    top: 300%;
+    z-index: -997;
   }
 
 </style>
