@@ -38,8 +38,13 @@ export default {
   <article class="container">
     <a href = "./tanuki/" class="secretTanukiButton allowPointerEvents"></a>
 
-    <div class="titleContainer noPointerEvents">
+    <div class="contactContainer noPointerEvents font ">
+      <h3>Contact me:</h3>
 
+      <img src="./assets/mailIcon.png" class="mailIcon"></img> alexnoles@outlook.com
+    </div>
+
+    <div class="titleContainer noPointerEvents">
       <div class="descriptionTextBlock">
         <div class="descText font noselect">
           <br>
@@ -278,6 +283,21 @@ export default {
     color: white;
   }
 
+  .contactContainer{
+    position: absolute;
+    right: 1%;
+    bottom: 1%;
+
+    color: white;
+    background-color: black;
+    padding: 5px;
+  }
+
+  .mailIcon{
+    width: 20px;
+    margin-top:
+  }
+
   .descriptionTextBlock{
     color: black;
     margin-top: 10%;
@@ -331,7 +351,7 @@ export default {
 
 
   .dissMainAnchor{
-    top: 5%;
+    top: 15%;
     right: 20%;
     position: absolute;
 
