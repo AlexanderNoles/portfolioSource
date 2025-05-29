@@ -36,13 +36,19 @@ export default {
 <template>
 
   <article class="container">
-    <a href = "./tanuki.html" class="secretTanukiButton allowPointerEvents"></a>
+    <a href = "./tanuki/" class="secretTanukiButton allowPointerEvents"></a>
 
     <div class="titleContainer noPointerEvents">
-      <h1 class="title font noselect">ALEXANDER NOLES</h1>
 
       <div class="descriptionTextBlock">
-        <div class="text font noselect">
+        <div class="descText font noselect">
+          <br>
+          <br>          
+          <br>
+          <br>          
+          <br>
+          <br>
+          <h1>About</h1>
           Hi! My name is Alex, I am a recently graduated CS Student who studied at Sussex University. 
           <br>
           <br>
@@ -86,7 +92,7 @@ export default {
           raymarching to give them a sense of depth.
           <br>
           <br>
-          You can read the report <a class="allowPointerEvents" href="./dissertation.html">here</a> and the code repository can be found <a class="allowPointerEvents" href="https://github.com/AlexanderNoles/FinalYearProject">here</a>.
+          You can read the report <a class="allowPointerEvents" href="./assets/dissertation.pdf">here</a> and the code repository can be found <a class="allowPointerEvents" href="https://github.com/AlexanderNoles/FinalYearProject">here</a>.
         </div>
 
         <img class="dissImage noPointerEvents noselect" src="./assets/screenshot8.png"/>
@@ -168,7 +174,7 @@ export default {
           <dd> Unfinished submission for the Sussex Game Jam. One of the more enjoyable development experiences I've had despite being unable to finish in time.</dd>
           <br>
 
-          <h1>Non-Game Jam Games:</h1>
+          <h1>Non-Jam Game Projects:</h1>
           
           <dt>• InfiniPlane ( <a href="https://github.com/AlexanderNoles/InfiniPlane" target="_blank" class="allowPointerEvents">https://github.com/AlexanderNoles/InfiniPlane</a> )</dt>
           <dd> A shell texturing based grass project, based primarily on <a href="https://www.youtube.com/watch?v=9dr-tRQzij4">this</a> video by YouTuber Acerola. </dd>
@@ -221,7 +227,7 @@ export default {
 <style scoped>
 
   a {
-    color: rgb(112, 9, 9);
+    color: rgb(168, 21, 21);
   }
 
   .secretTanukiButton{
@@ -264,7 +270,7 @@ export default {
   }
 
   .titleContainer{
-    margin: 10%;
+    margin: 2%;
   }
 
   .font{
@@ -272,15 +278,15 @@ export default {
   }
 
   .title{
-    color: white;
+    color: black;
+    font-size: 500%;
   }
 
   .descriptionTextBlock{
+    color: black;
+    margin-top: 10%;
     padding: 10px;
-    width: 50%;
-    margin-top: 5%;
-    margin-left: 50%;
-    background-color: black;
+    width: 25%;
   }
 
   .githubMainAnchor{
@@ -356,9 +362,12 @@ export default {
     color: white;
   }
 
+  .descText{
+    color: black
+  }
+
   .backingImage{
     width: 100%;
-    filter: brightness(70%)
   }
 
   .backingImageWrittenSection{
