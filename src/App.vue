@@ -69,9 +69,6 @@ export default {
       </div>
     </div>
 
-    <section class="navBar noPointerEvents">
-    </section>
-
     <section class="section noPointerEvents">
       <img class="backingImage noselect" src="./assets/firstBackground.png"/>
     </section>
@@ -278,8 +275,7 @@ export default {
   }
 
   .title{
-    color: black;
-    font-size: 500%;
+    color: white;
   }
 
   .descriptionTextBlock{
