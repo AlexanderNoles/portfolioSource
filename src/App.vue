@@ -4,7 +4,7 @@ import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 
 const images = Array.from({ length: 8 }, (_, index) => ({
   id: index + 1,
-  url: `/src/assets/galleryImages/img${index+1}.png`,
+  url: `/assets/galleryImages/img${index+1}.png`,
 }))
 
 const imageDescriptions = new Array(
@@ -15,7 +15,7 @@ const imageDescriptions = new Array(
   "Early piece of Pixel Art. Updated fairly recently so it fits a 16:9 aspect ratio.",
   "Pixel Art from late 2022.",
   "An early version of the ship from my dissertation project.",
-  "Screenshot of the intro to RED-HELL, an FPS side-project started inbetween years two and three of university."
+  "Screenshot of the intro to RED CHAIN, an FPS side-project started inbetween years two and three of university."
 )
 
 const config = {
@@ -51,6 +51,14 @@ export default {
 
       scrollToDashAndSlash: function() {
         const el = this.$refs.DandSSection;
+
+        if(el){
+          el.scrollIntoView({behaviour: 'smooth'});
+        }
+      },
+
+      scrollToFuture : function(){
+        const el = this.$refs.futureSection;
 
         if(el){
           el.scrollIntoView({behaviour: 'smooth'});
@@ -97,6 +105,9 @@ export default {
           Many of my projects are stored on my <a href="https://github.com/AlexanderNoles" target="_blank" class="allowPointerEvents">Github</a>, including a lot of my university work.
           I list several of these are in a section <a href="#" v-on:click="scrollToGithub()" class="allowPointerEvents">below</a>.
           <br>
+          <br>
+          <br>
+          Outside of finding regular work, I have several <a href="#" v-on:click="scrollToFuture()" class="allowPointerEvents">personal projects</a> that I have been working on intermittently. Each one is similar in scope to Dash And Slash.
         </div>
       </div>
     </div>
@@ -142,10 +153,10 @@ export default {
       </template>
     </Carousel>
 
-    <section class="section noPointerEvents displacement3">
+    <section class="section noPointerEvents displacement4">
       <img class="galleryLogo" src="./assets/GalleryLogo.png"></img>
 
-      <img class="backingImage noselect" src="./assets/thirdBackground.png"/>
+      <img class="backingImage noselect" src="./assets/galleryBackground.png"/>
     </section>
 
     <section ref="DandSSection" class="section displacement2 noPointerEvents">      
@@ -163,8 +174,26 @@ export default {
       <img class="backingImageWrittenSection noselect" src="./assets/secondBackground-export.png"/>
     </section>
 
-    <section class="section noPointerEvents displacement4">
-      future projects
+    <section ref = "futureSection" class="section noPointerEvents displacement3">
+      <img class="backingImage noselect" src="./assets/smallerProjectsBackground.png"/>
+
+      <!-- Two sub descriptions that only appear on hover over -->
+
+      <div class="smallerProjDescription"> 
+        <div class="font text">
+          Root King, similar to Dash And Slash, started as a Jam game, however unlike Dash And Slash, it was made in two days rather than a week. Despite that I really fell in love with the style
+          and how the game could be taken in numerous directions. Realistically, this project could be completely finished in a month or two, however, I don't think spending more time on it would be wasteful.
+          <br>
+          The Jam version can be played <a href="https://emeraldrailgun.itch.io/root-king" class="allowPointerEvents">here</a>.
+        </div>
+      </div>
+
+      <div class="smallerProjDescription displaceRight"> 
+        <div class="font text">
+          RED CHAIN was a project I spent the majority of my 2024 summer developing, it is relatively close to being finished but I had to suspend development for the sake of my dissertation. The game focuses on 
+          using a chain to hook in enemies so you can use them as weapons. This project is particularly close to being in a releasable state, ideally, I would be able to publish it late 2025 or early 2026.
+        </div>
+      </div>
     </section>
 
     <section ref="githubSection" class="section noPointerEvents displacement5">
@@ -275,6 +304,17 @@ export default {
     color: rgb(168, 21, 21);
   }
 
+  .smallerProjDescription{
+    position: absolute;
+    bottom: 1%;
+    padding: 1%;
+    width: 48%;
+  }
+
+  .displaceRight{
+    left: 50%;
+  }
+
   .galleryLogo{
     position: absolute;
     padding: 20px;
@@ -289,7 +329,7 @@ export default {
   }
 
   .carouselDisplacement{
-    top: 300%;
+    top: 400%;
     position: absolute;
     width: 100%;
     height: 95%
