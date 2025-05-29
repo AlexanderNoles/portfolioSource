@@ -1,5 +1,32 @@
-<script>
+<script setup>
+import 'vue3-carousel/carousel.css'
+import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 
+const images = Array.from({ length: 8 }, (_, index) => ({
+  id: index + 1,
+  url: `/src/assets/galleryImages/img${index+1}.png`,
+}))
+
+const imageDescriptions = new Array(
+  "Pixel Art from late 2023.",
+  "A planet from Star And Salvation, showcasing both the planet and atmosphere rendering which utilize raymarching. ",
+  "Pixel Art based on a postcard from mid 2022.",
+  "A hexagonal planet from an extension of my dissertation project. Created as part of an effort to place the simulation directly on a planet.", 
+  "Early piece of Pixel Art. Updated fairly recently so it fits a 16:9 aspect ratio.",
+  "Pixel Art from late 2022.",
+  "An early version of the ship from my dissertation project.",
+  "Screenshot of the intro to RED-HELL, an FPS side-project started inbetween years two and three of university."
+)
+
+const config = {
+  height: 'auto',
+  itemsToShow: 2,
+  gap: 5,
+  wrapAround: true
+}
+</script>
+
+<script>
 export default {
     name: 'app',
     data() {
@@ -101,11 +128,27 @@ export default {
       </div>
     </section>
 
-    <section class="section noPointerEvents displacement2">
-      gallery
+    <Carousel class="carouselNav carouselDisplacement" v-bind="config">
+      <Slide v-for="image in images" :key="image.id">
+        <div>
+          <img class="carouselItem" :src="image.url"/>
+          <p class="carouselDescription font">{{imageDescriptions[image.id-1]}}</p>
+        </div>
+      </Slide>
+
+      <template #addons>
+        <Navigation />
+        <Pagination />
+      </template>
+    </Carousel>
+
+    <section class="section noPointerEvents displacement3">
+      <img class="galleryLogo" src="./assets/GalleryLogo.png"></img>
+
+      <img class="backingImage noselect" src="./assets/thirdBackground.png"/>
     </section>
 
-    <section ref="DandSSection" class="section displacement3 noPointerEvents">      
+    <section ref="DandSSection" class="section displacement2 noPointerEvents">      
       <div class="dAndSMainAnchor noPointerEvents">
         <div class="dAndSDescription font noPointerEvents">
           <a href="https://store.steampowered.com/app/1951910/Dash_And_Slash/" target="_blank" class="allowPointerEvents noselect">"Dash And Slash"</a> 
@@ -230,6 +273,36 @@ export default {
 
   a {
     color: rgb(168, 21, 21);
+  }
+
+  .galleryLogo{
+    position: absolute;
+    padding: 20px;
+  }
+
+  .carouselNav{
+    --vc-nav-color: white;
+    --vc-nav-background: black;
+    --vc-nav-border-radius: 5;
+
+    --vc-pgn-active-color: white;
+  }
+
+  .carouselDisplacement{
+    top: 300%;
+    position: absolute;
+    width: 100%;
+    height: 95%
+  }
+
+  .carouselDescription{
+    width: 80%;
+    color: rgb(146, 146, 146);
+  }
+
+  .carouselItem{
+    width: 80%;
+    color: white;
   }
 
   .secretTanukiButton{
