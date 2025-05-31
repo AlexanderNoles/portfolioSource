@@ -70,10 +70,14 @@ export default {
 
 <template>
 
+  <!-- Fade in effect
+  <div class="fadeOutAnimation blackOut noPointerEvents">
+  </div>   -->
+
   <article class="container">
     <a href = "./tanuki/" class="secretTanukiButton allowPointerEvents"></a>
 
-    <div class="contactContainer noPointerEvents font ">
+    <div class="contactContainer noPointerEvents font riseUpAnimation">
       <h3>Contact me:</h3>
 
       <img src="./assets/mailIcon.png" class="mailIcon"></img> alexnoles@outlook.com
@@ -107,13 +111,17 @@ export default {
           <br>
           <br>
           <br>
-          Outside of finding regular work, I have several <a href="#" v-on:click="scrollToFuture()" class="allowPointerEvents">personal projects</a> that I have been working on intermittently. Each one is similar in scope to Dash And Slash.
+          Outside of trying to find regular work, I have several <a href="#" v-on:click="scrollToFuture()" class="allowPointerEvents">personal projects</a> that I have been working on intermittently. Each one is similar in scope to Dash And Slash.
+          <br>
+          <br>
+          <br>
+          >> <a  class="allowPointerEvents" href="./assets/CV.pdf">My CV</a> <<
         </div>
       </div>
     </div>
 
     <section class="section noPointerEvents">
-      <img class="backingImage noselect" src="./assets/firstBackground.png"/>
+      <img class="backingImage noselect slideInAnimation" src="./assets/firstBackground.png"/>
     </section>
 
     <section ref="dissertationSection" class="section noPointerEvents displacement1">
@@ -154,7 +162,7 @@ export default {
     </Carousel>
 
     <section class="section noPointerEvents displacement4">
-      <img class="galleryLogo" src="./assets/GalleryLogo.png"></img>
+      <!-- <img class="galleryLogo" src="./assets/GalleryLogo.png"></img> -->
 
       <img class="backingImage noselect" src="./assets/galleryBackground.png"/>
     </section>
@@ -181,17 +189,18 @@ export default {
 
       <div class="smallerProjDescription"> 
         <div class="font text">
-          Root King, similar to Dash And Slash, started as a Jam game, however unlike Dash And Slash, it was made in two days rather than a week. Despite that I really fell in love with the style
-          and how the game could be taken in numerous directions. Realistically, this project could be completely finished in a month or two, however, I don't think spending more time on it would be wasteful.
+          Root King, similar to Dash And Slash, started as a Jam game. Unlike Dash And Slash, it was made in two days rather than a week and is my first real puzzle game despite my love for the genre 
+          (Dash And Slash was actually meant to have some more exaggerated puzzle elements but the design didn't work). 
+          Realistically, this project could be completely finished in a month or two, however, I don't think spending more time on it would be wasteful.
           <br>
-          The Jam version can be played <a href="https://emeraldrailgun.itch.io/root-king" class="allowPointerEvents">here</a>.
+          The Jam version can be played <a href="https://emeraldrailgun.itch.io/root-king" target="_blank" class="allowPointerEvents">here</a>.
         </div>
       </div>
 
       <div class="smallerProjDescription displaceRight"> 
         <div class="font text">
           RED CHAIN was a project I spent the majority of my 2024 summer developing, it is relatively close to being finished but I had to suspend development for the sake of my dissertation. The game focuses on 
-          using a chain to hook in enemies so you can use them as weapons. This project is particularly close to being in a releasable state, ideally, I would be able to publish it late 2025 or early 2026.
+          using a chain to hook in enemies so you can use them as weapons. This project is particularly close to being in a releasable state, ideally, I would like to publish it late 2025 or early 2026.
         </div>
       </div>
     </section>
@@ -292,7 +301,6 @@ export default {
         </dl>
       </div>
     </section>
-
   </article>
   
   
@@ -302,6 +310,18 @@ export default {
 
   a {
     color: rgb(168, 21, 21);
+  }
+
+  .blackOut{
+    position: fixed;
+    top: 0%;
+    left: 0%;
+
+    z-index: 1000000000;
+
+    background-color: rgb(0, 0, 0, 0);
+    width: 100%;
+    height: 100%;
   }
 
   .smallerProjDescription{
@@ -332,17 +352,20 @@ export default {
     top: 400%;
     position: absolute;
     width: 100%;
-    height: 95%
+    height: 95%;
   }
 
   .carouselDescription{
     width: 80%;
     color: rgb(146, 146, 146);
+    margin-left: 10%;
   }
 
   .carouselItem{
     width: 80%;
+    margin-left: 10%;
     color: white;
+    border-style: solid;
   }
 
   .secretTanukiButton{
@@ -364,6 +387,10 @@ export default {
     overflow-x: auto;
     overflow-y: scroll;
     scroll-snap-type: y proximity;
+
+    min-width: 1920px;
+    min-height: 950px;
+    margin: 0 auto;
   }
 
   .noPointerEvents{
@@ -396,14 +423,23 @@ export default {
     color: white;
   }
 
-  .contactContainer{
+  .contactContainer, .contactContainerTop{
     position: absolute;
     right: 1%;
     bottom: 1%;
 
     color: white;
     background-color: black;
-    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 15px;
+
+    width: 200px;
+  }
+
+  .contactContainerTop{
+    top: 1%;
+    bottom: 93%;
   }
 
   .mailIcon{
@@ -414,6 +450,7 @@ export default {
   .descriptionTextBlock{
     color: black;
     margin-top: 10%;
+    bottom: 0%;
     padding: 10px;
     width: 25%;
   }
@@ -574,5 +611,43 @@ export default {
     top: 500%;
     z-index: -995;
   }
+
+
+
+  .fadeInAnimation{
+    animation: fadeIn 1s;
+  }
+
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  } 
+
+  .fadeOutAnimation{
+    animation: fadeOut 1s;
+  }
+
+  @keyframes fadeOut {
+    0% {  background-color: black; }
+    100% { background-color: rgb(0, 0, 0, 0); }
+  } 
+
+  .slideInAnimation{
+    animation: slideIn 1s;
+  }
+
+  @keyframes slideIn {
+    0% { padding-left: 100%; }
+    100% { padding-left: 0%; }
+  } 
+
+  .riseUpAnimation{
+    animation: riseUp 0.5s;
+  }
+
+  @keyframes riseUp {
+    0% { bottom: -100%; }
+    100% { margin-top: 1%; }
+  } 
 
 </style>
